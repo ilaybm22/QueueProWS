@@ -10,8 +10,9 @@ namespace Tests
             Business business = new Business()
             {
                 BusinessID = "879788",
-                 
-            }
+                HomeNumber = "23",
+            };
+            ValidateModel(business);
 
         }
         public static void ValidateModel(object model)

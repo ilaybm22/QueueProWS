@@ -12,7 +12,18 @@ namespace LibraryDTO
     {
         public override bool IsValid(object? value)
         {
-            string str = value.ToString();
+            if (value == null || string.IsNullOrEmpty(value.ToString()))
+            {
+                return true;
+            }
+
+            string str = value.ToString()!;
+
+            if (str.Length == 0)
+            {
+                return true;
+            }
+
             char letter = str[0];
             return char.IsUpper(letter);
         }

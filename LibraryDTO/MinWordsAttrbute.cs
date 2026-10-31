@@ -18,7 +18,12 @@ namespace LibraryDTO
 
         public override bool IsValid(object? value)
         {
-            if (value is string str && !string.IsNullOrWhiteSpace(str))
+            if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
+            {
+                return true;
+            }
+
+            if (value is string str)
             {
                 string[] words = str.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
